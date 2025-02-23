@@ -23,3 +23,9 @@ jobs:
       - name: Check .NET code format
         run: dotnet format --verify-no-changes
         working-directory: './src'
+        steps:
+  - name: Install .NET 9.0
+    run: |
+      wget https://dot.net/v1/dotnet-install.sh
+      chmod +x dotnet-install.sh
+      ./dotnet-install.sh --version 9.0.100
